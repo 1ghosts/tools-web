@@ -50,7 +50,7 @@ const gotoAnchor = (anchor: string) => {
   }
 }
 const gotoAbout = () => {
-  router.push('about')
+  router.push('/about')
 }
 
 onMounted(async () => {
