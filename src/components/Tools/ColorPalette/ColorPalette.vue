@@ -73,6 +73,159 @@
                 </div>
               </div>
             </el-tab-pane>
+            
+            <el-tab-pane label="霓虹色" name="neon">
+              <div class="color-grid">
+                <div 
+                  v-for="color in neonColors" 
+                  :key="color.hex"
+                  class="color-item"
+                  :style="{ backgroundColor: color.hex }"
+                  @click="copyColor(color)"
+                >
+                  <div class="color-info">
+                    <span class="color-name">{{ color.name }}</span>
+                    <span class="color-hex">{{ color.hex }}</span>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+            
+            <el-tab-pane label="自然色" name="nature">
+              <div class="color-grid">
+                <div 
+                  v-for="color in natureColors" 
+                  :key="color.hex"
+                  class="color-item"
+                  :style="{ backgroundColor: color.hex }"
+                  @click="copyColor(color)"
+                >
+                  <div class="color-info">
+                    <span class="color-name">{{ color.name }}</span>
+                    <span class="color-hex">{{ color.hex }}</span>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+            
+            <el-tab-pane label="金属色" name="metal">
+              <div class="color-grid">
+                <div 
+                  v-for="color in metalColors" 
+                  :key="color.hex"
+                  class="color-item"
+                  :style="{ backgroundColor: color.hex }"
+                  @click="copyColor(color)"
+                >
+                  <div class="color-info">
+                    <span class="color-name">{{ color.name }}</span>
+                    <span class="color-hex">{{ color.hex }}</span>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+            
+            <el-tab-pane label="复古色" name="vintage">
+              <div class="color-grid">
+                <div 
+                  v-for="color in vintageColors" 
+                  :key="color.hex"
+                  class="color-item"
+                  :style="{ backgroundColor: color.hex }"
+                  @click="copyColor(color)"
+                >
+                  <div class="color-info">
+                    <span class="color-name">{{ color.name }}</span>
+                    <span class="color-hex">{{ color.hex }}</span>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+            
+            <el-tab-pane label="季节色" name="seasonal">
+              <div class="color-grid">
+                <div 
+                  v-for="color in seasonalColors" 
+                  :key="color.hex"
+                  class="color-item"
+                  :style="{ backgroundColor: color.hex }"
+                  @click="copyColor(color)"
+                >
+                  <div class="color-info">
+                    <span class="color-name">{{ color.name }}</span>
+                    <span class="color-hex">{{ color.hex }}</span>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+            
+            <el-tab-pane label="莫兰迪色" name="morandi">
+              <div class="color-grid">
+                <div 
+                  v-for="color in morandiColors" 
+                  :key="color.hex"
+                  class="color-item"
+                  :style="{ backgroundColor: color.hex }"
+                  @click="copyColor(color)"
+                >
+                  <div class="color-info">
+                    <span class="color-name">{{ color.name }}</span>
+                    <span class="color-hex">{{ color.hex }}</span>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+            
+            <el-tab-pane label="马卡龙色" name="macaron">
+              <div class="color-grid">
+                <div 
+                  v-for="color in macaronColors" 
+                  :key="color.hex"
+                  class="color-item"
+                  :style="{ backgroundColor: color.hex }"
+                  @click="copyColor(color)"
+                >
+                  <div class="color-info">
+                    <span class="color-name">{{ color.name }}</span>
+                    <span class="color-hex">{{ color.hex }}</span>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+            
+            <el-tab-pane label="工业风" name="industrial">
+              <div class="color-grid">
+                <div 
+                  v-for="color in industrialColors" 
+                  :key="color.hex"
+                  class="color-item"
+                  :style="{ backgroundColor: color.hex }"
+                  @click="copyColor(color)"
+                >
+                  <div class="color-info">
+                    <span class="color-name">{{ color.name }}</span>
+                    <span class="color-hex">{{ color.hex }}</span>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+            
+            <el-tab-pane label="中国传统色" name="chinese">
+              <div class="color-grid">
+                <div 
+                  v-for="color in chineseColors" 
+                  :key="color.hex"
+                  class="color-item"
+                  :style="{ backgroundColor: color.hex }"
+                  @click="copyColor(color)"
+                >
+                  <div class="color-info">
+                    <span class="color-name">{{ color.name }}</span>
+                    <span class="color-hex">{{ color.hex }}</span>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
           </el-tabs>
         </div>
       </div>
@@ -81,7 +234,7 @@
     <!-- desc -->
     <ToolDetail title="描述">
       <el-text>
-        在线色板工具，提供基础颜色、渐变色、Material Design 颜色和扁平化颜色，点击颜色可复制颜色值，方便设计和开发使用。
+        在线色板工具，提供基础颜色、渐变色、Material Design 颜色、扁平化颜色、霓虹色、自然色、金属色、复古色、季节色、莫兰迪色、马卡龙色、工业风和中国传统色，点击颜色可复制颜色值，方便设计和开发使用。
       </el-text>
     </ToolDetail>
 
@@ -168,6 +321,150 @@ const flatColors = [
   { name: 'Flat Silver', hex: '#BDC3C7' },
   { name: 'Flat Concrete', hex: '#95A5A6' },
   { name: 'Flat Asbestos', hex: '#7F8C8D' },
+];
+
+// 霓虹色
+const neonColors = [
+  { name: 'Neon Pink', hex: '#FF1493' },
+  { name: 'Neon Blue', hex: '#00FFFF' },
+  { name: 'Neon Green', hex: '#39FF14' },
+  { name: 'Neon Yellow', hex: '#FFFF00' },
+  { name: 'Neon Orange', hex: '#FF6600' },
+  { name: 'Neon Purple', hex: '#9932CC' },
+  { name: 'Neon Red', hex: '#FF073A' },
+  { name: 'Neon Cyan', hex: '#00FFFF' },
+  { name: 'Neon Magenta', hex: '#FF00FF' },
+  { name: 'Neon Lime', hex: '#32CD32' },
+  { name: 'Neon Turquoise', hex: '#40E0D0' },
+  { name: 'Neon Lavender', hex: '#E6E6FA' },
+];
+
+// 自然色
+const natureColors = [
+  { name: 'Forest Green', hex: '#228B22' },
+  { name: 'Earth Brown', hex: '#8B4513' },
+  { name: 'Sky Blue', hex: '#87CEEB' },
+  { name: 'Sunset Orange', hex: '#FF8C00' },
+  { name: 'Ocean Blue', hex: '#1E90FF' },
+  { name: 'Moss Green', hex: '#8A9A5B' },
+  { name: 'Sandy Beige', hex: '#F5DEB3' },
+  { name: 'Leaf Green', hex: '#008000' },
+  { name: 'Clay Brown', hex: '#B22222' },
+  { name: 'Dolphin Gray', hex: '#878787' },
+  { name: 'Coral Pink', hex: '#FF7F50' },
+  { name: 'Pine Green', hex: '#01796F' },
+];
+
+// 金属色
+const metalColors = [
+  { name: 'Gold', hex: '#FFD700' },
+  { name: 'Silver', hex: '#C0C0C0' },
+  { name: 'Bronze', hex: '#CD7F32' },
+  { name: 'Copper', hex: '#B87333' },
+  { name: 'Platinum', hex: '#E5E4E2' },
+  { name: 'Brass', hex: '#B5A642' },
+  { name: 'Steel Blue', hex: '#4682B4' },
+  { name: 'Aluminum', hex: '#A9A9A9' },
+  { name: 'Chrome', hex: '#E0E0E0' },
+  { name: 'Titanium', hex: '#818589' },
+  { name: 'Zinc', hex: '#E8E8E8' },
+  { name: 'Lead', hex: '#696969' },
+];
+
+// 复古色
+const vintageColors = [
+  { name: 'Sepia', hex: '#704214' },
+  { name: 'Mustard', hex: '#FFDB58' },
+  { name: 'Burgundy', hex: '#800020' },
+  { name: 'Teal', hex: '#008080' },
+  { name: 'Cream', hex: '#FFFDD0' },
+  { name: 'Olive', hex: '#808000' },
+  { name: 'Mauve', hex: '#E0B0FF' },
+  { name: 'Peach', hex: '#FFDAB9' },
+  { name: 'Sage', hex: '#9CAF88' },
+  { name: 'Navy', hex: '#000080' },
+  { name: 'Coral', hex: '#FF7F50' },
+  { name: 'Lavender', hex: '#E6E6FA' },
+];
+
+// 季节色
+const seasonalColors = [
+  { name: 'Spring Green', hex: '#00FF7F' },
+  { name: 'Summer Yellow', hex: '#FFFF00' },
+  { name: 'Autumn Orange', hex: '#FF8C00' },
+  { name: 'Winter Blue', hex: '#1E90FF' },
+  { name: 'Cherry Blossom', hex: '#FFB7C5' },
+  { name: 'Beach Sand', hex: '#F4A460' },
+  { name: 'Fall Leaf', hex: '#8B4513' },
+  { name: 'Snow White', hex: '#FFFFFF' },
+  { name: 'Tulip Red', hex: '#FF0000' },
+  { name: 'Sunflower Yellow', hex: '#FFD700' },
+  { name: 'Pumpkin Orange', hex: '#FF7F50' },
+  { name: 'Icicle Blue', hex: '#B0E0E6' },
+];
+
+// 莫兰迪色
+const morandiColors = [
+  { name: '莫兰迪灰', hex: '#9B9B9B' },
+  { name: '莫兰迪粉', hex: '#E8D8D1' },
+  { name: '莫兰迪蓝', hex: '#A8B8C8' },
+  { name: '莫兰迪绿', hex: '#A8B8A8' },
+  { name: '莫兰迪黄', hex: '#E8D8A8' },
+  { name: '莫兰迪紫', hex: '#B8A8C8' },
+  { name: '莫兰迪棕', hex: '#B8A89B' },
+  { name: '莫兰迪橙', hex: '#E8C8A8' },
+  { name: '莫兰迪青', hex: '#A8C8C8' },
+  { name: '莫兰迪红', hex: '#C8A8A8' },
+  { name: '莫兰迪灰蓝', hex: '#9B9BA8' },
+  { name: '莫兰迪灰绿', hex: '#9BA89B' },
+];
+
+// 马卡龙色
+const macaronColors = [
+  { name: '马卡龙粉', hex: '#FFB6C1' },
+  { name: '马卡龙蓝', hex: '#87CEFA' },
+  { name: '马卡龙绿', hex: '#98FB98' },
+  { name: '马卡龙黄', hex: '#FFFACD' },
+  { name: '马卡龙紫', hex: '#E6E6FA' },
+  { name: '马卡龙橙', hex: '#FFA07A' },
+  { name: '马卡龙青', hex: '#E0FFFF' },
+  { name: '马卡龙红', hex: '#FFC0CB' },
+  { name: '马卡龙灰', hex: '#F0F0F0' },
+  { name: '马卡龙棕', hex: '#F5DEB3' },
+  { name: '马卡龙天蓝', hex: '#87CEEB' },
+  { name: '马卡龙薄荷', hex: '#98FB98' },
+];
+
+// 工业风
+const industrialColors = [
+  { name: '工业黑', hex: '#2C2C2C' },
+  { name: '工业灰', hex: '#666666' },
+  { name: '工业银', hex: '#999999' },
+  { name: '工业红', hex: '#B22222' },
+  { name: '工业蓝', hex: '#4682B4' },
+  { name: '工业黄', hex: '#DAA520' },
+  { name: '工业绿', hex: '#228B22' },
+  { name: '工业橙', hex: '#FF8C00' },
+  { name: '工业棕', hex: '#8B4513' },
+  { name: '工业青', hex: '#008080' },
+  { name: '工业紫', hex: '#8A2BE2' },
+  { name: '工业白', hex: '#F5F5F5' },
+];
+
+// 中国传统色
+const chineseColors = [
+  { name: '胭脂红', hex: '#E44B4E' },
+  { name: '黛青', hex: '#4A6C8C' },
+  { name: '琉璃黄', hex: '#FFD700' },
+  { name: '玉脂白', hex: '#F7F7F7' },
+  { name: '水墨黑', hex: '#1A1A1A' },
+  { name: '竹青', hex: '#9DB47E' },
+  { name: '朱砂红', hex: '#C93756' },
+  { name: '石青', hex: '#557799' },
+  { name: '金黄', hex: '#E6B422' },
+  { name: '藕荷粉', hex: '#E8B4B8' },
+  { name: '松绿', hex: '#3A5F0B' },
+  { name: '琥珀色', hex: '#E6C200' },
 ];
 
 // 复制颜色

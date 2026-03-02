@@ -152,16 +152,6 @@ export const constantRoute = [
     }
   },
   {
-    path: '/palettes',
-    component: () => import('@/components/Tools/Palettes/Palettes.vue'),
-    name: 'palettes',
-    meta: {
-      title: "色板",
-      keywords: '色板，颜色板',
-      description: '在线复制颜色，好看的颜色组合色板',
-    }
-  },
-  {
     path: '/unit',
     component: () => import('@/components/Tools/Unit/Unit.vue'),
     name: 'unit',
@@ -463,12 +453,12 @@ export const constantRoute = [
   },
   {
     path: '/aes',
-    component: () => import('@/components/Tools/AES/AES.vue'),
+    component: () => import('@/components/Tools/AesEncrypt/AesEncrypt.vue'),
     name: 'aes',
     meta: {
       title: "AES加解密",
       keywords: 'AES加密,AES解密,加密工具,解密工具',
-      description: '在线AES加解密工具，支持CBC和ECB模式，支持128位、192位、256位密钥长度',
+      description: '在线AES加解密工具，支持多种加密模式和填充方式，提供安全可靠的数据加密解密服务',
     }
   },
   {
