@@ -6,6 +6,10 @@ services:
     container_name: tools-web
     ports:
       - "8080:80"
+      - "80:80"
+      - "443:443"
     volumes:
       - ./nginx:/etc/nginx/conf.d:ro
+      - ./certs:/etc/nginx/certs:ro
+      - ./public-root:/usr/share/nginx/root-files:ro
     restart: unless-stopped
