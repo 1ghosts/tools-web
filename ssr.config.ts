@@ -1,7 +1,14 @@
-// import vitePluginSeoPrerender from "vite-plugin-seo-prerender";
-
-
+import fs from "fs";
 import seoPrerender from "vite-plugin-seo-prerender";
+
+const chromeExecutablePath = [
+    process.env.PUPPETEER_EXECUTABLE_PATH,
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+    "/usr/bin/google-chrome",
+    "/usr/bin/chromium-browser",
+    "/usr/bin/chromium"
+].find((filePath) => filePath && fs.existsSync(filePath));
 
 export function seoperender(){
     return seoPrerender({
@@ -70,6 +77,9 @@ export function seoperender(){
             '/colorpalette',
             '/about'
         ],
+        puppeteer: chromeExecutablePath ? {
+            executablePath: chromeExecutablePath
+        } : {},
         // network: true,
         // removeStyle: true
     })

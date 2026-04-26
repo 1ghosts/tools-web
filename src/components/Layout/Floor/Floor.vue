@@ -6,7 +6,7 @@ const currentYear: number = new Date().getFullYear();
 
 <template>
   <div class="w-full rounded-2xl z-10 p-5 text-center tech-footer">
-    <el-text>{{ appDesc }}  © {{ currentYear }} <a href="https://github.com/naroat/tools-web" target="_blank" class="text-blue-700 tech-link">Tools-Web</a></el-text>
+    <el-text>{{ appDesc }} © {{ currentYear }}</el-text>
   </div>
 </template>
 
@@ -16,15 +16,5 @@ const currentYear: number = new Date().getFullYear();
   background: transparent;
   border: none;
   position: relative;
-}
-
-/* 简约链接 */
-.tech-link {
-  transition: all 0.2s ease;
-  text-decoration: none;
-}
-
-.tech-link:hover {
-  color: #409EFF;
 }
 </style>

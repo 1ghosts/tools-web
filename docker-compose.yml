@@ -1,0 +1,11 @@
+services:
+  tools-web:
+    build:
+      context: .
+    image: tools-web:latest
+    container_name: tools-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d:ro
+    restart: unless-stopped

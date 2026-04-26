@@ -19,11 +19,12 @@ export default defineConfig(({command, mode}) => {
         // Specify symbolId format
         symbolId: 'icon-[dir]-[name]',
       }),
-      seoperender()
+      ...(mode === 'production' ? [seoperender()] : [])
     ],
     resolve: {
       alias: {
-        "@": path.resolve("./src")  //相对路径别名配置， 使用@替代src
+        "@": path.resolve("./src"),  //相对路径别名配置， 使用@替代src
+        "v-code-diff": path.resolve("./node_modules/v-code-diff/dist/v3/index.es.js")
       }
     },
     server: {
